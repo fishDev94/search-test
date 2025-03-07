@@ -1,2 +1,4 @@
 // docs about commintlint: https://github.com/conventional-changelog/commitlint
-module.exports = { extends: ["@commitlint/config-conventional"] };
+export default {
+    extends: ['@commitlint/config-conventional'],
+  };
