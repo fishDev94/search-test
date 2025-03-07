@@ -1,4 +1,4 @@
-export interface Contact {
+export interface Post {
   body: string;
   email: string;
   id: number;

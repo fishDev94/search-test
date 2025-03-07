@@ -1,18 +1,26 @@
-import { Contact } from "../../types";
+import type { Post } from "../../types";
 import Card from "../UI/Card/Card";
 
-export default function ResultList({data = []}: {data?: Contact[]}) {
+import { paginate, getTotalPages } from "../../utils/pagination";
+import { useState } from "react";
 
-    const printResults = () => { 
-        return data.map((item, idx) => (
-            <div key={idx}>{item.name}</div>
-        ))
-    }
+import styles from "./result-list.module.scss";
 
-    return (
-        <div>
-            <Card />
-            {printResults()}
-        </div>
-    )
+export default function ResultList({ data = [] }: { data?: Post[] }) {
+  const [page] = useState(1);
+
+  const printResults = () => {
+    return paginate(data, page).map((post, idx) => (
+      <Card post={post} key={idx} />
+    ));
+  };
+
+  const pages = getTotalPages(data);
+
+  return (
+    <div className={styles.result_list}>
+      <p>page: {pages}</p>
+      {printResults()}
+    </div>
+  );
 }

@@ -14,7 +14,7 @@ export default function AppButton({
       className={`${styles.app_button} ${disabled ? styles.inactive : ""}`}
       onClick={onClick}
       disabled={disabled}
-      name='app_button'
+      name="app_button"
     >
       {text}
     </button>
