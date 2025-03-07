@@ -1,7 +1,8 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import AppButton from "../UI/AppButton/AppButton";
 import styles from "./searchbar.module.scss";
 import useSearchContacts from "../../hook/useSearchContact";
+import { Contact } from "../../types";
 
 export default function Searchbar({
   value,
@@ -12,20 +13,31 @@ export default function Searchbar({
   handleSearch: (arg: string) => void;
   onSumbit: () => void;
 }) {
+  const [isSearching, setIsSearching] = useState(false);
+
   const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+
+    if (value.length > 3) {
+      setIsSearching(true);
+    } else {
+      setIsSearching(false);
+    }
 
     handleSearch(value);
   };
 
+  const { data } = useSearchContacts<Contact[]>(value, {
+    enabled: isSearching,
+    isSubmitted: isSearching,
+    key: "searchbar",
+  });
+
   const onSumbitClick = () => {
     onSumbit();
-    console.log("onSumbitClick - refetch");
   };
 
-  const { data } = useSearchContacts(value, true);
-
-  console.log("Searchbar - data", data);
+  console.log("Searchbar - data", data?.length);
 
   return (
     <div className={styles.searchbar}>

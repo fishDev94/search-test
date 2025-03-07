@@ -10,16 +10,17 @@ import { Contact } from "./types";
 function App() {
   const [query, setQuery] = useState<string>("");
 
-  const { data, refetch } = useSearchContacts<Contact[]>(query);
+  const { data, refetch } = useSearchContacts<Contact[]>(query, {
+    enabled: true,
+    key: "home",
+  });
 
   const handleSearchSubmit = async () => {
     refetch();
-
-    console.log(data);
   };
 
   return (
-    <main>
+    <main className="jp-main">
       <h1>Json Placeholder test</h1>
       <Searchbar
         value={query}

@@ -1,15 +1,26 @@
 import { useQuery } from "@tanstack/react-query";
 import apiCall from "../utils/apiCall";
 
-export default function useSearchContacts<T>(query: string, isSubmitted: boolean = false) {
-    const searchQuery = isSubmitted ? query : null;
+export default function useSearchContacts<T>(
+  query: string,
+  {
+    enabled = false,
+    isSubmitted = false,
+    key = 'default'
+  }: { enabled?: boolean; isSubmitted?: boolean, key?: string}
+) {
+    console.log(enabled)
 
-    return useQuery<T>({
-        queryKey: ["comments", searchQuery],
-        queryFn: () => apiCall("comments", {
-          query: {
-            q: query,
-          },
-        }),
-      });
+  const searchQuery = isSubmitted ? query : null;
+
+  return useQuery<T>({
+    queryKey: [key, searchQuery],
+    queryFn: () =>
+      apiCall("comments", {
+        query: {
+          q: query,
+        },
+      }),
+    enabled,
+  });
 }

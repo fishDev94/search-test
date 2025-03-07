@@ -1,3 +1,10 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.jp-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px;
+}
