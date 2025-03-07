@@ -1,0 +1,14 @@
+.searchbar {
+    display: flex;
+    gap: 12px;
+    box-shadow: var(--box-shadow-4dp);
+    border-radius: var(--border-radius-m);
+    padding: 4px 8px;
+    overflow: hidden;
+    width: max-content;
+
+    &__input {
+        border: 0;
+        outline: 0;
+    }
+}
