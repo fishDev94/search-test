@@ -2,8 +2,9 @@
     display: flex;
     gap: 12px;
     box-shadow: var(--box-shadow-4dp);
-    border-radius: var(--border-radius-m);
-    padding: 4px 8px;
+    border-radius: var(--border-radius-l);
+    padding-block: 6px;
+    padding-inline: 24px 6px;
     overflow: hidden;
     width: max-content;
 
@@ -11,4 +12,5 @@
         border: 0;
         outline: 0;
     }
+
 }

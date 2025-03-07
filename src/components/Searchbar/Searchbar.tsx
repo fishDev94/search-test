@@ -18,7 +18,7 @@ export default function Searchbar({
   const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
-    if (value.length > 3) {
+    if (value.length >= 3) {
       setIsSearching(true);
     } else {
       setIsSearching(false);
@@ -47,7 +47,7 @@ export default function Searchbar({
         type="text"
         placeholder="search"
       />
-      <AppButton text="Search" onClick={onSumbitClick} />
+      <AppButton text="Search" onClick={onSumbitClick} disabled={!isSearching} />
     </div>
   );
 }
