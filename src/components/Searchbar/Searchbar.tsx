@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import AppButton from "../UI/AppButton/AppButton";
 import styles from "./searchbar.module.scss";
-import useSearchContacts from "../../hook/useSearchContact";
+import useSearchContacts from "../../hook/useSearchContacts";
 import { Contact } from "../../types";
 
 export default function Searchbar({

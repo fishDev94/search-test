@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import Searchbar from "./components/Searchbar/Searchbar";
 import ResultList from "./components/ResultList/ResultList";
-import useSearchContacts from "./hook/useSearchContact";
+import useSearchContacts from "./hook/useSearchContacts";
 
 import { Contact } from "./types";
 

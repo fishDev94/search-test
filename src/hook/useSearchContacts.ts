@@ -9,8 +9,6 @@ export default function useSearchContacts<T>(
     key = 'default'
   }: { enabled?: boolean; isSubmitted?: boolean, key?: string}
 ) {
-    console.log(enabled)
-
   const searchQuery = isSubmitted ? query : null;
 
   return useQuery<T>({
