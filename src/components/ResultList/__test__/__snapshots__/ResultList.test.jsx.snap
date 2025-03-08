@@ -1,0 +1,98 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ResultList > matches snapshot with data 1`] = `
+<div>
+  <div
+    class="_result_list_fc25aa"
+  >
+    <div
+      class="_paginator_387b14"
+    >
+      <button
+        class="_app_button_1f8b9b _inactive_1f8b9b"
+        disabled=""
+        name="app_button"
+      >
+        Prev
+      </button>
+      <span>
+        Page 
+        1
+         of 
+        1
+      </span>
+      <button
+        class="_app_button_1f8b9b _inactive_1f8b9b"
+        disabled=""
+        name="app_button"
+      >
+        Next
+      </button>
+    </div>
+    <div
+      class="_card_c3be90 _default_c3be90"
+    >
+      <h2>
+        User-test-1
+      </h2>
+      <p
+        class="_card__email_c3be90"
+      >
+        test-mail@mail.com
+      </p>
+      <p>
+        Comment 1
+         
+      </p>
+    </div>
+    <div
+      class="_card_c3be90 _default_c3be90"
+    >
+      <h2>
+        User-test-2
+      </h2>
+      <p
+        class="_card__email_c3be90"
+      >
+        test-mail@mail.com
+      </p>
+      <p>
+        Comment 2
+         
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ResultList > matches snapshot without data 1`] = `
+<div>
+  <div
+    class="_result_list_fc25aa"
+  >
+    <div
+      class="_paginator_387b14"
+    >
+      <button
+        class="_app_button_1f8b9b _inactive_1f8b9b"
+        disabled=""
+        name="app_button"
+      >
+        Prev
+      </button>
+      <span>
+        Page 
+        1
+         of 
+        0
+      </span>
+      <button
+        class="_app_button_1f8b9b "
+        name="app_button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -19,6 +19,7 @@ export default function ResultList({ data = [] }: { data?: Comment[] }) {
         currentPage={currentPage}
         totalPages={pages}
         setPage={setCurrentPage}
+        data-testid="paginator"
       />
       {mapComponent(paginate(data, currentPage), Card, "comment")}
     </div>

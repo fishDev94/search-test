@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Searchbar > matches snapshot 1`] = `
+<div>
+  <div
+    class="_searchbar_cc4f57"
+  >
+    <div
+      class="_searchbar__container_cc4f57"
+    >
+      <input
+        class="_searchbar__container_input_cc4f57"
+        placeholder="search"
+        type="text"
+        value=""
+      />
+      <button
+        class="_app_button_1f8b9b _inactive_1f8b9b"
+        disabled=""
+        name="app_button"
+      >
+        Search
+      </button>
+    </div>
+    <ul
+      class="_search_results_99e224 "
+    />
+  </div>
+</div>
+`;
