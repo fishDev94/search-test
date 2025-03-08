@@ -5,12 +5,12 @@ import Searchbar from "./components/Searchbar/Searchbar";
 import ResultList from "./components/ResultList/ResultList";
 import useSearchContacts from "./hook/useSearchContacts";
 
-import { Contact } from "./types";
+import type { Comment } from "./types";
 
 function App() {
   const [query, setQuery] = useState<string>("");
 
-  const { data, refetch } = useSearchContacts<Contact[]>(query, {
+  const { data, refetch } = useSearchContacts<Comment[]>(query, {
     enabled: true,
     key: "home",
   });

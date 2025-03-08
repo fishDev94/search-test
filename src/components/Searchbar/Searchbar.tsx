@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo, useState } from "react";
+import { ChangeEvent, useCallback, useMemo, useState } from "react";
 import AppButton from "../UI/AppButton/AppButton";
 import styles from "./searchbar.module.scss";
 import useSearchContacts from "../../hook/useSearchContacts";
@@ -52,6 +52,25 @@ export default function Searchbar({
     return data ? data.length > 0 : false;
   }, [data]);
 
+  const clearValue = () => {
+    handleSearch("");
+    setIsSearching(false);
+    setIsSearchResultsOpened(false);
+  };
+
+  const clearButton = useCallback(() => {
+    return (
+      value.length > 0 && (
+        <span
+          onClick={clearValue}
+          className={styles.searchbar__container_clear}
+        >
+          clear
+        </span>
+      )
+    );
+  }, [value]);
+
   console.log("Searchbar - data", data?.length);
 
   return (
@@ -63,7 +82,9 @@ export default function Searchbar({
           type="text"
           placeholder="search"
           onKeyDown={handleKeyDown}
+          value={value}
         />
+        {clearButton()}
         <AppButton
           text="Search"
           onClick={onSumbitClick}

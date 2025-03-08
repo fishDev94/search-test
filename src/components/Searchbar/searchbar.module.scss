@@ -5,6 +5,7 @@
 
   &__container {
     display: flex;
+    align-items: center;
     gap: 12px;
     box-shadow: var(--box-shadow-4dp);
     border-radius: var(--border-radius-l);
@@ -19,5 +20,12 @@
     border: 0;
     outline: 0;
     width: 100%;
+  }
+
+  &__container_clear {
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    color: rgba(var(--primary-20));
   }
 }
