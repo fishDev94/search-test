@@ -1,4 +1,4 @@
-import type { Post } from "../../types";
+import type { Comment } from "../../types";
 import Card from "../UI/Card/Card";
 
 import { paginate, getTotalPages } from "../../utils/pagination";
@@ -6,12 +6,12 @@ import { useState } from "react";
 
 import styles from "./result-list.module.scss";
 
-export default function ResultList({ data = [] }: { data?: Post[] }) {
+export default function ResultList({ data = [] }: { data?: Comment[] }) {
   const [page] = useState(1);
 
   const printResults = () => {
-    return paginate(data, page).map((post, idx) => (
-      <Card post={post} key={idx} />
+    return paginate(data, page).map((comment, idx) => (
+      <Card comment={comment} key={idx} />
     ));
   };
 

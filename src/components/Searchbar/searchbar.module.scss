@@ -1,4 +1,9 @@
 .searchbar {
+  position: relative;
+  width: max-content;
+  height: var(--search-bar-height);
+
+  &__container {
     display: flex;
     gap: 12px;
     box-shadow: var(--box-shadow-4dp);
@@ -6,11 +11,13 @@
     padding-block: 6px;
     padding-inline: 24px 6px;
     overflow: hidden;
-    width: max-content;
+    width: 400px;
+    height: 100%;
+  }
 
-    &__input {
-        border: 0;
-        outline: 0;
-    }
-
+  &__container_input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+  }
 }

@@ -1,18 +1,20 @@
 :root {
-    --primary-20: 114, 157, 150;
-    --primary-50: 122, 180, 171;
-    --primary-80: 162, 213, 205;
-    --primary-100: 206, 227, 224;
+  --primary-20: 114, 157, 150;
+  --primary-50: 122, 180, 171;
+  --primary-80: 162, 213, 205;
+  --primary-100: 206, 227, 224;
 
-    --border-radius-m: 20px;
-    --border-radius-l: 25px;
+  --border-radius-m: 20px;
+  --border-radius-l: 25px;
 
-    --neutral-0: 255, 255, 255;
-    --neutral-40: 190, 190, 190;
-    --neutral-60: 102, 102, 102;
-    --neutral-80: 38, 38, 38;
-    --neutral-100: 0, 0, 0;
+  --neutral-0: 255, 255, 255;
+  --neutral-40: 190, 190, 190;
+  --neutral-60: 102, 102, 102;
+  --neutral-80: 38, 38, 38;
+  --neutral-100: 0, 0, 0;
 
-    --box-shadow-2dp: 0 0 10px 0 rgba(var(--neutral-100), 0.05);
-    --box-shadow-4dp: 0 0 6px 0 rgba(var(--neutral-100), 0.25);
+  --box-shadow-2dp: 0 0 10px 0 rgba(var(--neutral-100), 0.05);
+  --box-shadow-4dp: 0 0 6px 0 rgba(var(--neutral-100), 0.25);
+
+  --search-bar-height: 52px;
 }

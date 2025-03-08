@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { Post } from "../../../types";
+import type { Comment } from "../../../types";
 import styles from "./card.module.scss";
 
-export default function Card({ post }: { post: Post }) {
+export default function Card({ comment }: { comment: Comment }) {
   const [isShown, setIsShown] = useState(false);
   const [isTextLonger, setTextLonger] = useState(false);
 
@@ -12,20 +12,20 @@ export default function Card({ post }: { post: Post }) {
 
   const body = useMemo(() => {
     const regex = /^[\s\S]{0,64}/;
-    const firstString = post.body.match(regex)?.[0];
+    const firstString = comment.body.match(regex)?.[0];
 
-    if (firstString!.length < post.body.length) {
+    if (firstString!.length < comment.body.length) {
       setTextLonger(true);
     }
 
-    if (firstString!.length < post.body.length && !isShown) {
+    if (firstString!.length < comment.body.length && !isShown) {
       return `${firstString}...`;
-    } else if (firstString!.length < post.body.length && isShown) {
-      return post.body;
+    } else if (firstString!.length < comment.body.length && isShown) {
+      return comment.body;
     }
 
     return `${firstString}`;
-  }, [post.body, isShown]);
+  }, [comment.body, isShown]);
 
   const showButtonText = useMemo(() => {
     return isShown ? "show less" : "show more";
@@ -43,8 +43,8 @@ export default function Card({ post }: { post: Post }) {
 
   return (
     <div className={styles.card}>
-      <h2>{post.name}</h2>
-      <p className={styles.card__email}>{post.email}</p>
+      <h2>{comment.name}</h2>
+      <p className={styles.card__email}>{comment.email}</p>
       <p>
         {body} {printShowBtn()}
       </p>

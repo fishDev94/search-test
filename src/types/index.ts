@@ -1,4 +1,4 @@
-export interface Post {
+export interface Comment {
   body: string;
   email: string;
   id: number;
