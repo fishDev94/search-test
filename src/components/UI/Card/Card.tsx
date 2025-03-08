@@ -2,7 +2,13 @@ import { useMemo, useState } from "react";
 import type { Comment } from "../../../types";
 import styles from "./card.module.scss";
 
-export default function Card({ comment }: { comment: Comment }) {
+export default function Card({
+  comment,
+  type = "default",
+}: {
+  comment: Comment;
+  type?: "default" | "result";
+}) {
   const [isShown, setIsShown] = useState(false);
   const [isTextLonger, setTextLonger] = useState(false);
 
@@ -42,7 +48,7 @@ export default function Card({ comment }: { comment: Comment }) {
   };
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${styles[type]}`}>
       <h2>{comment.name}</h2>
       <p className={styles.card__email}>{comment.email}</p>
       <p>

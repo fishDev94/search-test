@@ -1,7 +1,7 @@
-import { useCallback } from "react";
 import type { Comment } from "../../types";
 import styles from "./search-results.module.scss";
 import Card from "../UI/Card/Card";
+import { mapComponent } from "../../utils/mapComponents";
 
 export default function SearchResults({
   isActive = false,
@@ -10,15 +10,9 @@ export default function SearchResults({
   isActive: boolean;
   searchResultData?: Comment[];
 }) {
-  const resultList = useCallback(() => {
-    return searchResultData.map((comment, idx) => (
-      <Card key={idx} comment={comment} />
-    ));
-  }, [searchResultData]);
-
   return (
     <ul className={`${styles.search_results} ${isActive ? styles.active : ""}`}>
-      {resultList()}
+      {mapComponent(searchResultData, Card, "comment", { type: "result" })}
     </ul>
   );
 }
