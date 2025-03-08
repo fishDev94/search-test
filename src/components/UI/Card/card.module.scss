@@ -1,13 +1,23 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    box-shadow: var(--box-shadow-4dp);
-    border-radius: 8px;
-    padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: var(--box-shadow-4dp);
+  border-radius: 8px;
+  padding: 12px;
 
-    &__email {
-        color: rgba(var(--primary-20));
-        font-size: 14px;
+  &__email {
+    color: rgba(var(--primary-20));
+    font-size: 14px;
+  }
+
+  &__body {
+    &--show {
+      font-weight: 700;
+      color: rgba(var(--primary-20));
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: underline;
     }
+  }
 }
