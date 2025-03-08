@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Searchbar from "./components/Searchbar/Searchbar";
 import ResultList from "./components/ResultList/ResultList";
@@ -15,9 +15,12 @@ function App() {
     key: "home",
   });
 
-  const handleSearchSubmit = async () => {
-    refetch();
-  };
+  useEffect(() => {
+    if (query.length === 0) {
+      refetch();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query]);
 
   return (
     <main className="jp-main">
@@ -25,9 +28,8 @@ function App() {
       <Searchbar
         value={query}
         handleSearch={setQuery}
-        onSumbit={() => {
-          handleSearchSubmit();
-        }}
+        onSumbit={refetch}
+        onClear={() => setQuery("")}
       />
       <ResultList data={data} />
     </main>

@@ -9,10 +9,12 @@ export default function Searchbar({
   value,
   handleSearch = () => {},
   onSumbit = () => {},
+  onClear = () => {},
 }: {
   value: string;
   handleSearch: (arg: string) => void;
   onSumbit: () => void;
+  onClear: () => void;
 }) {
   const [isSearching, setIsSearching] = useState(false);
   const [isSearchResultsOpened, setIsSearchResultsOpened] = useState(false);
@@ -56,6 +58,7 @@ export default function Searchbar({
     handleSearch("");
     setIsSearching(false);
     setIsSearchResultsOpened(false);
+    onClear();
   };
 
   const clearButton = useCallback(() => {
@@ -69,9 +72,8 @@ export default function Searchbar({
         </span>
       )
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
-
-  console.log("Searchbar - data", data?.length);
 
   return (
     <div className={styles.searchbar}>

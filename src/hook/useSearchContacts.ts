@@ -6,8 +6,8 @@ export default function useSearchContacts<T>(
   {
     enabled = false,
     isSubmitted = false,
-    key = 'default'
-  }: { enabled?: boolean; isSubmitted?: boolean, key?: string}
+    key = "default",
+  }: { enabled?: boolean; isSubmitted?: boolean; key?: string }
 ) {
   const searchQuery = isSubmitted ? query : null;
 

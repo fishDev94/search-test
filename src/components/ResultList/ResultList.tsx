@@ -6,16 +6,21 @@ import { useState } from "react";
 
 import styles from "./result-list.module.scss";
 import { mapComponent } from "../../utils/mapComponents";
+import Paginator from "../Paginator/Paginator";
 
 export default function ResultList({ data = [] }: { data?: Comment[] }) {
-  const [page] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const pages = getTotalPages(data);
 
   return (
     <div className={styles.result_list}>
-      <p>page: {pages}</p>
-      {mapComponent(paginate(data, page), Card, "comment")}
+      <Paginator
+        currentPage={currentPage}
+        totalPages={pages}
+        setPage={setCurrentPage}
+      />
+      {mapComponent(paginate(data, currentPage), Card, "comment")}
     </div>
   );
 }
