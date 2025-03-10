@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import useSearchContacts from '../useSearchContacts';
+import useSearchComments from '../useSearchComments';
 import apiCall from '../../utils/apiCall';
 
 vi.mock('../../utils/apiCall', () => ({
@@ -14,14 +14,14 @@ const createWrapper = () => {
   );
 };
 
-describe('useSearchContacts', () => {
+describe('useSearchComments', () => {
   afterEach(() => {
     vi.clearAllMocks();
   });
 
   it('should not call the API if enabled is false', async () => {
     const { result } = renderHook(
-      () => useSearchContacts('test', { enabled: false }),
+      () => useSearchComments('test', { enabled: false }),
       { wrapper: createWrapper() }
     );
 
@@ -33,7 +33,7 @@ describe('useSearchContacts', () => {
 
   it('should call the API if enabled is true and return data', async () => {
     const { result } = renderHook(
-      () => useSearchContacts('test', { enabled: true }),
+      () => useSearchComments('test', { enabled: true }),
       { wrapper: createWrapper() }
     );
 
@@ -49,7 +49,7 @@ describe('useSearchContacts', () => {
 
   it('should use the correct query key', async () => {
     const { result } = renderHook(
-      () => useSearchContacts('test', { enabled: true, key: 'customKey' }),
+      () => useSearchComments('test', { enabled: true, key: 'customKey' }),
       { wrapper: createWrapper() }
     );
   
@@ -71,7 +71,7 @@ describe('useSearchContacts', () => {
 
   it('should not call the API if isSubmitted is false and enabled too', async () => {
     const { result } = renderHook(
-      () => useSearchContacts('test', { enabled: false, isSubmitted: false }),
+      () => useSearchComments('test', { enabled: false, isSubmitted: false }),
       { wrapper: createWrapper() }
     );
   
@@ -85,7 +85,7 @@ describe('useSearchContacts', () => {
 
   it('should call the API if isSubmitted is true', async () => {
     const { result } = renderHook(
-      () => useSearchContacts('test', { enabled: true, isSubmitted: true }),
+      () => useSearchComments('test', { enabled: true, isSubmitted: true }),
       { wrapper: createWrapper() }
     );
 

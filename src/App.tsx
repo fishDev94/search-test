@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 
 import Searchbar from "./components/Searchbar/Searchbar";
 import ResultList from "./components/ResultList/ResultList";
-import useSearchContacts from "./hook/useSearchContacts";
+import useSearchComments from "./hook/useSearchComments";
 
 import type { Comment } from "./types";
 
 function App() {
   const [query, setQuery] = useState<string>("");
 
-  const { data, refetch } = useSearchContacts<Comment[]>(query, {
+  const { data, refetch } = useSearchComments<Comment[]>(query, {
     enabled: true,
     key: "home",
   });

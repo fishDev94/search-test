@@ -1,7 +1,7 @@
 import { ChangeEvent, useCallback, useMemo, useState, useEffect } from "react";
 import AppButton from "../UI/AppButton/AppButton";
 import styles from "./searchbar.module.scss";
-import useSearchContacts from "../../hook/useSearchContacts";
+import useSearchComments from "../../hook/useSearchComments";
 import { Comment } from "../../types";
 import SearchResults from "../SearchResults/SearchResults";
 
@@ -29,7 +29,7 @@ export default function Searchbar({
     handleSearch(value);
   };
 
-  const { data } = useSearchContacts<Comment[]>(value, {
+  const { data } = useSearchComments<Comment[]>(value, {
     enabled: isSearching,
     isSubmitted: isSearching,
     key: "searchbar",

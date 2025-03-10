@@ -3,7 +3,7 @@ import { render, fireEvent } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Searchbar from "../Searchbar";
 
-vi.mock("../../hook/useSearchContacts", () => ({
+vi.mock("../../hook/useSearchComments", () => ({
   default: vi.fn(() => ({ data: [] })),
 }));
 
